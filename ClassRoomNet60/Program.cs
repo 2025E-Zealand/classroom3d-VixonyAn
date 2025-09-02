@@ -9,3 +9,4 @@ ClassAD.StudentList.Add(Vincent);
 ClassAD.StudentList.Add(Kristoffer);
 
 ClassAD.PrintStudentInfo();
+ClassAD.PrintSeasonStatistics();

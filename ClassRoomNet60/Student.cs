@@ -8,10 +8,14 @@ namespace ClassRoomNet60
 {
 	public class Student
 	{
+		#region instance fields
 		private string name;
 		private int birthMonth;
 		private int birthDate;
+		private string seasonName;
+		#endregion
 
+		#region properties
 		public string Name
 		{
 			get { return name; }
@@ -27,6 +31,12 @@ namespace ClassRoomNet60
 			get { return birthDate; }
 			set { birthDate = value; }
 		}
+		public string SeasonName
+		{
+			get { return seasonName; }
+			set { seasonName = value; }
+		}
+		#endregion
 
 		public Student(string name, int birthMonth, int birthDate)
 		{
@@ -35,5 +45,28 @@ namespace ClassRoomNet60
 			BirthDate = birthDate;
 		}
 
+		public string Season()
+		{
+			switch (BirthMonth)
+			{
+				case 12:
+				case 1:
+				case 2:
+					return "Winter";
+				case 3:
+				case 4:
+				case 5:
+					return "Spring";
+				case 6:
+				case 7:
+				case 8:
+					return "Summer";
+				case 9:
+				case 10:
+				case 11:
+					return "Autumn";
+			}
+			return "Error";
+		}
 	}
 }

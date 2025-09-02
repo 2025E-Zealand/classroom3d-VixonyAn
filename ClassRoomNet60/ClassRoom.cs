@@ -30,5 +30,33 @@ namespace ClassRoomNet60
 								  $"Student Birthday: {student.BirthMonth}/{student.BirthDate}\n");
 			}
 		}
+
+		public void PrintSeasonStatistics()
+		{
+			var Winter = 0; var Spring = 0;	var Summer = 0; var Autumn = 0;
+			foreach (var student in StudentList)
+			{
+				if (student.Season() == "Winter")
+				{
+					Winter++;
+				}
+				else if (student.Season() == "Spring")
+				{
+					Spring++;
+				}
+				else if (student.Season() == "Summer")
+				{
+					Summer++;
+				}
+				else if (student.Season() == "Autumn")
+				{
+					Autumn++;
+				}
+			}
+			Console.WriteLine($"Winter birthdays: {Winter}\n" +
+							  $"Spring birthdays: {Spring}\n" +
+							  $"Summer birthdays: {Summer}\n" +
+							  $"Autumn birthdays: {Autumn}\n");
+		}
 	}
 }
